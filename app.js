@@ -10,17 +10,22 @@ var usersRouter = require('./routes/users');
 var app = express();
 
 // view engine setup
+// 视图位置及模板引擎说明
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+//使用中间件
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+// 指明静态资源(*.html、*.js、*.css、图像)位置：public 目录下
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+// 使用路由中间件
+app.use('/', indexRouter); // 表示访问 "/" 目录下的资源
+app.use('/users', usersRouter); // 表示访问 "/users" 目录下的资源
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

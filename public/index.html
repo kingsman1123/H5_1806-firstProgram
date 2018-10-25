@@ -3,8 +3,161 @@
 <head>
 	<meta charset="UTF-8">
 	<title>首页</title>
+	<link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css"/>
 </head>
 <body>
+	 <div class="container">
+	 	<!--导航栏-->
+		<nav class="navbar navbar-default navbar-inverse">
+		    <!-- Brand and toggle get grouped for better mobile display -->
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <a class="navbar-brand" href="#">职位管理系统</a>
+		    </div>
+		
+		    <!-- Collect the nav links, forms, and other content for toggling -->
+		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		      <ul class="nav navbar-nav">
+		        <li class="active"><a href="#">首页 <span class="sr-only">(current)</span></a></li>
+		        <li><a href="#" data-toggle="modal" data-target="#postMessage">职位管理</a></li>	        
+		      </ul>
+		      
+		      <ul class="nav navbar-nav navbar-right">
+		        <li><a href="#" data-toggle="modal" data-target="#loginModal">登录</a></li>
+		        <li><a href="#" data-toggle="modal" data-target="#regModal">注册</a></li>        
+		      </ul>
+		    </div><!-- /.navbar-collapse -->
+	    </nav>
+	    <!--警告框-->
+	    <div class="row">
+	    	<div class="col-md-10 col-md-offset-1 alert alert-info" role="alert">
+	    		基于NodeJs+Express+MongoDB+EJS的职位管理系统
+	    	</div>
+	    </div>
+	    
+	    <!-- 登录模态框 -->
+		<div class="modal fade" id="loginModal" tabindex="-1" >
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		        	<span >&times;</span></button>
+		        <h4 class="modal-title" id="loginModalLabel">用户登录</h4>
+		      </div>
+		      <div class="modal-body">
+		         <form>
+				  <div class="form-group">
+				    <label for="login-username">用户名</label>
+				    <input type="text" class="form-control" id="login-username" placeholder="请输入用户名">
+				  </div>
+				  <div class="form-group">
+				    <label for="login-password">密码</label>
+				    <input type="password" class="form-control" id="login-password" placeholder="请输入密码">
+				  </div>				 
+				</form>
+		      </div>
+		      <div class="modal-footer">		        
+		        <button type="button" class="btn login-btn btn-primary">登录</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		
+		<!-- 注册模态框 -->
+		<div class="modal fade" id="regModal" tabindex="-1" >
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		        	<span >&times;</span></button>
+		        <h4 class="modal-title" id="regModalLabel">用户注册</h4>
+		      </div>
+		      <div class="modal-body">
+		        <form>
+				  <div class="form-group">
+				    <label for="reg-username">用户名</label>
+				    <input type="text" class="form-control" id="reg-username" placeholder="输入用户名">
+				  </div>
+				  <div class="form-group">
+				    <label for="reg-password">密码</label>
+				    <input type="password" class="form-control" id="reg-password" placeholder="输入密码">
+				  </div>
+				  <div class="form-group">
+				    <label for="reg-confirm-password">确认密码</label>
+				    <input type="password" class="form-control" id="reg-confirm-password" placeholder="再次输入密码">
+				  </div>
+				  <div class="form-group">
+				    <label for="reg-email">邮箱</label>
+				    <input type="email" class="form-control" id="reg-email" placeholder="输入e-mail地址">
+				  </div>
+				 
+				</form>
+		      </div>
+		      <div class="modal-footer">	        
+		        <button type="button" class="btn reg-btn btn-primary">注册</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+	    
+	    <!-- 职位信息模态框 -->
+		<div class="modal fade" id="postMessage" tabindex="-1" >
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		        	<span >&times;</span></button>
+		        <h4 class="modal-title" id="postModalLabel">职位信息</h4>
+		      </div>
+		      <div class="modal-body">
+		        <form>
+		          <div class="form-group">
+				    <label >公司logo</label>
+				    <div class="fileForm form-control">
+				    	 <input type="file" class="btn">
+				    </div>   
+				  </div>
+				  <div class="form-group">
+				    <label for="reg-username">职位名称</label>
+				    <input type="text" class="form-control" id="reg-username" placeholder="输入用户名">
+				  </div>
+				  <div class="form-group">
+				    <label for="reg-username">公司名称</label>
+				    <input type="text" class="form-control" id="reg-username" placeholder="输入用户名">
+				  </div>
+				 <div class="form-group">
+				    <label for="reg-username">工作经验</label>
+				    <input type="text" class="form-control" id="reg-username" placeholder="输入用户名">
+				  </div>
+				  <div class="form-group">
+				    <label for="reg-username">职位类型</label>
+				    <input type="text" class="form-control" id="reg-username" placeholder="输入用户名">
+				  </div>
+				  <div class="form-group">
+				    <label for="reg-username">工作地点</label>
+				    <input type="text" class="form-control" id="reg-username" placeholder="输入用户名">
+				  </div>
+				  <div class="form-group">
+				    <label for="reg-username">岗位薪资</label>
+				    <input type="text" class="form-control" id="reg-username" placeholder="输入用户名">
+				  </div>
+				</form>
+		      </div>
+		      <div class="modal-footer">	        
+		        <button type="button" class="btn reg-btn btn-primary">注册</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+	  </div><!-- /.container-fluid -->
 	
+	
+	<script src="lib/jquery/jquery-1.12.4.min.js"></script>
+	<script src="lib/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>
